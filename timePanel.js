@@ -5,7 +5,8 @@
 			this.$element = ele;
 			this.defaults = {
 				'beginInput':'#datetimepicker1',
-				'endInput':'#datetimepicker2'
+				'endInput':'#datetimepicker2',
+				'showTime':'200'
 			};
 			this.options = $.extend({},this.defaults,opt)
 		}
@@ -75,13 +76,14 @@
 				$date2 = this.$date2,
 				$timeHourLi = this.$timeHourLi,
 				$timeMinLi = this.$timeMinLi,
-				$timeHeadSpanFirst = this.$timeHeadSpanFirst;
+				$timeHeadSpanFirst = this.$timeHeadSpanFirst,
+				showTime = this.options.showTime;
 				$date1.click(function(){
 						//起始时间点击事件
-						$timePanel.show(200)
+						$timePanel.show(showTime)
 						$timePanel.css({
-							'top':$date1.offset().top+30,
-							'left':$date1.offset().left+20
+							'top':$date1.position().top+70,
+							'left':$date1.position().left+20
 						})
 						$(this).addClass("texting")
 						$date2.removeClass("texting")
@@ -106,16 +108,17 @@
 				$timePanel=this.$timePanel,
 				$date2 = this.$date2,
 				$timeHourLi = this.$timeHourLi,
-				$timeMinLi = this.$timeMinLi;
+				$timeMinLi = this.$timeMinLi,
+				showTime = this.options.showTime;
 				$date2.click(function(){
 		
 						$(this).addClass("texting")
 						$date1.removeClass("texting")
 						if($date1.val()){
-						$timePanel.show(200)
+						$timePanel.show(showTime)
 						$timePanel.css({
-							'top':$date2.offset().top+30,
-							'left':$date2.offset().left-100
+							'top':$date2.position().top+70,
+							'left':$date2.position().left-100
 						})
 						var data2ValF = $date1.val().slice(0,2)
 						var data2ValA = $date1.val().slice(3,5)
@@ -139,7 +142,7 @@
 							}
 					}else{
 						alert("请先输入起始时间！")
-						$timePanel.hide(200)
+						$timePanel.hide(showTime)
 					}
 					})
 
@@ -151,7 +154,8 @@
 				$timeHourLi = this.$timeHourLi,
 				$timeMinLi = this.$timeMinLi,
 				$timeHeadSpanFirst = this.$timeHeadSpanFirst,
-				$timeHeadSpanLast =  this.$timeHeadSpanLast;
+				$timeHeadSpanLast =  this.$timeHeadSpanLast,
+				showTime = this.options.showTime;
 				$timePanel.click(function(e){
 								if($(e.target).parent().hasClass("timeHour")&&$(e.target).hasClass("live")){
 									var thisTime = $(e.target).text()
@@ -204,7 +208,7 @@
 									}
 								if($(e.target).hasClass("time-confirm")){
 
-									$timePanel.hide()
+									$timePanel.hide(showTime)
 
 									var timeHM = $timePanel.find(".timeHead").text()
 									
