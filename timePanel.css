@@ -1,0 +1,70 @@
+*{
+  margin:0;padding: 0;
+}
+.timePanel{
+  position: absolute;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
+.timePanel .timeHead{
+  font-size:20px;
+  font-weight: bold; 
+  background-color: #7992B7;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+
+}
+.timePanel .timeHour,.timePanel .timeMin{
+  display: inline-block;
+  width: 216px;
+vertical-align: top;
+text-align: left;
+}
+.timePanel .timeHour{
+  border-right: 1px solid #f5f2f2;
+
+}
+.timePanel .timePart{
+  border-bottom: 1px solid #f5f2f2;
+  padding-bottom: 20px;
+}
+.timePanel .timeHour,.timePanel .timeMin{
+  margin-top:10px;
+}
+.timePanel .timeHour li,.timePanel .timeMin li{
+ width: 20px;
+ text-align: center;
+ margin:0 7px 15px;
+  display: inline-block;
+  border:1px solid transparent;
+  padding:5px 15px;
+  color:#9a9a9a;
+}
+.timePanel li.live{
+  border-radius:10px;
+  background:#e6e6e6;
+
+  cursor: pointer;
+}
+.timePanel .timeHour li.live:hover,.timePanel .timeMin li.live:hover{
+  background: #7992b7;
+  color:white;
+}
+.timePanel .timeHour li.active,.timePanel .timeMin li.active{
+   background: #7992b7;
+   color:white;
+}
+.timePanel .time-confirm{
+  width: 70px;
+  height:30px;
+  line-height: 30px;
+  margin:10px auto;
+  cursor:pointer;
+    border-radius:10px;
+  background:#7992b7;
+  color: white;
+}
